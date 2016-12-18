@@ -26,6 +26,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.roufid.tutorial.entity.postgresql.Book;
+import com.roufid.tutorial.entity.postgresql.Person;
 
 /**
  * Spring configuration of the "PostgreSQL" database.
@@ -68,7 +69,7 @@ public class PostgresqlConfiguration {
 		return builder
 					.dataSource(postgresqlDataSource())
 					.properties(hibernateProperties())
-					.packages(Book.class)
+					.packages(Book.class, Person.class)
 					.persistenceUnit("postgresqlPU")
 					.build();
 	}

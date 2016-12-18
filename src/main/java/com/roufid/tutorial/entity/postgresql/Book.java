@@ -2,10 +2,7 @@ package com.roufid.tutorial.entity.postgresql;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "BOOK")
@@ -14,6 +11,8 @@ public class Book implements Serializable {
 	private static final long serialVersionUID = -9019470250770543773L;
 
 	@Id
+	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column
